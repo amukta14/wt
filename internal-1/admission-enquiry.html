@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Enquiry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-left: 5px solid #333;
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .heading img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .notice {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .notice h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        td:first-child {
+            width: 40%;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 5px;
+        }
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button button {
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button button:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <img src="CBIT-LOGO-2023.png" alt="CBIT Logo">
+            <h1>Chaitanya Bharathi Institute of Technology (A)</h1>
+            <h2>Academic and Examination Cell</h2>
+            <div class="details">
+                <h3>Ref No: U21/AEC/TSEAMCET-22/Admissions/2022-23</h3>
+                <h3>Date: 22/10/2022</h3>
+            </div>
+        </div>
+
+        <div class="notice">
+            <h2>Notice</h2>
+            <h4>Attention Students: Admission in Engineering (TSEAMCET-2022) at CBIT</h4>
+            <p><strong>Reporting Dates:</strong> 26/10/2022 - 28/10/2022</p>
+            <p><strong>Timings:</strong> 9:00 AM - 5:00 PM (Arrive before 2:00 PM)</p>
+            <p><strong>Instructions:</strong> Students allotted seats via TSEAMCET-2022 must report with original and Xerox copies of required certificates and pay the miscellaneous fee as mentioned.</p>
+        </div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td>Father's Name</td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td>Allotment Order</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>Joining Report</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>Convener Fee Payment Receipt</td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                    <td>TSEAMCET-22 Hall Ticket</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>TSEAMCET-22 Rank Card</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>SSC/Equivalent Marks Memo</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>Intermediate Memo-Cum-Pass Certificate</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>Transfer Certificate</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>Aadhaar Card</td>
+                    <td><input type="file" required></td>
+                </tr>
+                <tr>
+                    <td>Passport Size Photos (Minimum 2)</td>
+                    <td><input type="file" multiple required></td>
+                </tr>
+                <tr>
+                    <td>Miscellaneous Fee Payment Receipt</td>
+                    <td><input type="file" required></td>
+                </tr>
+            </table>
+
+            <div class="button">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

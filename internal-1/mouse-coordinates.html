@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Location</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #demo {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onclick="clicked(event)">
+    <p id="demo">Click anywhere to get mouse coordinates.</p>
+</body>
+
+<script>
+    function clicked(event) {
+        let x = event.clientX; // Get X position of click
+        let y = event.clientY; // Get Y position of click
+        document.getElementById('demo').innerHTML = `X: ${x}, Y: ${y}`;
+    }
+</script>
+</html> 

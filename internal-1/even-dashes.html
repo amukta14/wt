@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers Dash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Even Numbers Dash</h2>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button onclick="addDashes()">Add Dashes</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function addDashes() {
+            const input = document.getElementById('numberInput').value;
+            const result = document.getElementById('result');
+            
+            if (!input) {
+                result.textContent = 'Please enter a number';
+                return;
+            }
+
+            let output = '';
+            for (let i = 0; i < input.length; i++) {
+                output += input[i];
+                if (i < input.length - 1) {
+                    const current = parseInt(input[i]);
+                    const next = parseInt(input[i + 1]);
+                    if (current % 2 === 0 && next % 2 === 0) {
+                        output += '-';
+                    }
+                }
+            }
+            result.textContent = `Result: ${output}`;
+        }
+    </script>
+</body>
+</html> 

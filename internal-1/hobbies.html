@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        .hobby-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Hobbies</h1>
+    </header>
+
+    <main>
+        <section id="hobbies">
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Reading</li>
+                <li>Photography</li>
+                <li>Hiking</li>
+                <li>Cooking</li>
+                <li>Playing Guitar</li>
+            </ul>
+        </section>
+
+        <section id="favorites">
+            <h2>Favorite Books & Movies</h2>
+            <h3>Books</h3>
+            <ul>
+                <li>The Great Gatsby</li>
+                <li>To Kill a Mockingbird</li>
+                <li>1984</li>
+            </ul>
+            <h3>Movies</h3>
+            <ul>
+                <li>The Shawshank Redemption</li>
+                <li>Inception</li>
+                <li>The Dark Knight</li>
+            </ul>
+        </section>
+
+        <section id="multimedia">
+            <h2>Photography Gallery</h2>
+            <img src="https://source.unsplash.com/random/800x400/?photography" alt="Photography Example" class="hobby-image">
+        </section>
+
+        <section id="feedback">
+            <h2>Share Your Thoughts</h2>
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Hobbies Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

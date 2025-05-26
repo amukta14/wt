@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Real DOM Example</title>
+</head>
+<body>
+<h1>Real DOM Example</h1>
+<p id="count">Button clicked 0 times</p>
+<button id="btn">Click Me</button>
+
+<script>
+let count = 0;
+document.getElementById('btn').addEventListener('click', () => {
+count++;
+document.getElementById('count').innerText = `Button clicked ${count} times`;
+console.log('Real DOM Updated');
+});
+</script>
+</body>
+</html> 

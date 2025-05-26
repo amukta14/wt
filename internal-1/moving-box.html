@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            position: absolute;
+            left: 0px;
+            top: 50px;
+            width: 100px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 200px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body onload="initImage()">
+    <img id="i" src="https://images.unsplash.com/photo-1495745966610-2a67f2297e5e?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Photo">
+    
+    <div class="container">
+        <h2>Moving Image Demo</h2>
+        <p>Watch the image move smoothly from left to right</p>
+        <button onclick="resetImage()">Reset Position</button>
+    </div>
+
+    <script>
+        var dom, x, y, finalX = 700;
+
+        function initImage() {
+            dom = document.getElementById('i').style;
+            x = parseInt(dom.left) || 0;
+            y = parseInt(dom.top) || 50;
+            moveImage();
+        }
+
+        function moveImage() {
+            if (x < finalX) {
+                x++;
+                dom.left = x + "px";
+                setTimeout(() => moveImage(), 1);
+            }
+        }
+
+        function resetImage() {
+            x = 0;
+            dom.left = "0px";
+            moveImage();
+        }
+    </script>
+</body>
+</html> 

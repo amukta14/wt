@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #teamAScore, #teamBScore {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Team A vs Team B</h2>
+        <p>Team A: <span id="teamAScore">100/2</span></p>
+        <p>Team B: <span id="teamBScore">95/3</span></p>
+        <button onclick="updateScore()">Update</button>
+        <button onclick="resetScore()">Reset</button>
+    </div>
+
+    <script>
+        const originalTeamA = "100/2";
+        const originalTeamB = "95/3";
+
+        function updateScore() {
+            document.getElementById("teamAScore").innerText = "123/4";
+            document.getElementById("teamBScore").innerText = "117/5";
+        }
+
+        function resetScore() {
+            document.getElementById("teamAScore").innerText = originalTeamA;
+            document.getElementById("teamBScore").innerText = originalTeamB;
+        }
+    </script>
+</body>
+</html> 

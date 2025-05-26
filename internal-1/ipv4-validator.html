@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPv4 Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .valid {
+            color: #4CAF50;
+        }
+        .invalid {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>IPv4 Validator</h2>
+        <input type="text" id="ipInput" placeholder="Enter IPv4 address">
+        <button onclick="validateIP()">Validate</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function validateIP() {
+            const ipInput = document.getElementById('ipInput').value;
+            const result = document.getElementById('result');
+            
+            // Regular expression for IPv4 validation
+            const ipv4Regex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+            
+            if (ipv4Regex.test(ipInput)) {
+                result.innerHTML = `<span class="valid">Valid IPv4 address: ${ipInput}</span>`;
+            } else {
+                result.innerHTML = `<span class="invalid">Invalid IPv4 address</span>`;
+            }
+        }
+    </script>
+</body>
+</html> 

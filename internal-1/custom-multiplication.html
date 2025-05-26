@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Multiplication Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:first-child td {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        td:first-child {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Custom Multiplication Table</h2>
+        <div class="input-group">
+            <input type="number" id="rows" placeholder="Rows" min="1" max="20">
+            <input type="number" id="cols" placeholder="Columns" min="1" max="20">
+            <button onclick="generateTable()">Generate</button>
+        </div>
+        <div id="tableBox"></div>
+    </div>
+
+    <script>
+        function generateTable() {
+            let r = parseInt(document.getElementById("rows").value) || 10;
+            let c = parseInt(document.getElementById("cols").value) || 10;
+            
+            // Limit the size to prevent performance issues
+            r = Math.min(Math.max(1, r), 20);
+            c = Math.min(Math.max(1, c), 20);
+            
+            let table = "<table>";
+            
+            // Add header row
+            table += "<tr><td>×</td>";
+            for (let j = 1; j <= c; j++) {
+                table += `<td>${j}</td>`;
+            }
+            table += "</tr>";
+            
+            // Add multiplication rows
+            for (let i = 1; i <= r; i++) {
+                table += "<tr>";
+                table += `<td>${i}</td>`; // Row header
+                for (let j = 1; j <= c; j++) {
+                    table += `<td>${i * j}</td>`;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.getElementById("tableBox").innerHTML = table;
+        }
+    </script>
+</body>
+</html> 

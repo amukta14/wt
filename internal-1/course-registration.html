@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .heading img {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+        .date {
+            margin-bottom: 20px;
+        }
+        .mainform {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 8px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .three-col {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .three-col > div {
+            flex: 1;
+            margin: 0 10px;
+        }
+        table[border="true"] {
+            border-collapse: collapse;
+        }
+        table[border="true"] th,
+        table[border="true"] td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        table[border="true"] th {
+            background-color: #f4f4f4;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+        .required::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <img src="CBIT-LOGO-2023.png" alt="CBIT Logo">
+        <h1>Chaitanya Bharathi Institute of Technology</h1>
+        <p><b>Chaitanya Bharathi P.O., Kokapet (V), Gandipet (M), Hyderabad - 500 075, Telangana State
+            Phone No: 040-24193280; Fax No: 040 – 24193278; Website: www.cbit.ac.in</b></p>
+        <h2>REGISTRATION FORM</h2>
+    </div>
+
+    <div class="date">
+        <label for="reg-date" class="required">Date:</label>
+        <input type="date" id="reg-date" name="date" required>
+    </div>
+
+    <div class="mainform">
+        <form action="/submit-registration" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td><label for="student-name" class="required"><h4>1. Name of the Student:</h4></label></td>
+                    <td><input type="text" id="student-name" name="name" required aria-required="true"></td>
+                </tr>
+                <tr>
+                    <td><label for="roll-no" class="required"><h4>2. Roll No:</h4></label></td>
+                    <td><input type="text" id="roll-no" name="rollno" required aria-required="true"></td>
+                </tr>
+                <tr>
+                    <td><label for="programme" class="required"><h4>3. Name of the Programme : B.E. / B.Tech.</h4></label></td>
+                    <td><input type="text" id="programme" name="programme" required aria-required="true"></td>
+                </tr>
+            </table>
+
+            <div class="three-col">
+                <div class="col-1">
+                    <label for="semester" class="required"><h4 style="display: inline;">4. Semester:</h4></label>
+                    <input type="text" id="semester" name="sem" value="III" required aria-required="true">
+                </div>
+                <div class="col-2">
+                    <label for="mobile" class="required"><h4 style="display: inline;">5. Mobile No</h4></label>
+                    <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required aria-required="true">
+                </div>
+                <div class="col-3">
+                    <label for="email" class="required"><h4 style="display: inline;">6. EmailId</h4></label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+            </div>
+
+            <label for="fee-proof" class="required"><b>Details of Annual Tuition Fee: (Attach Proofs for Payment)</b></label>
+            <input type="file" id="fee-proof" name="fee" required aria-required="true">
+
+            <table>
+                <tr>
+                    <td><label for="fee-status" class="required"><h4 style="display: inline;">(a) Status of Tuition Fee Payment:</h4></label></td>
+                    <td><input type="text" id="fee-status" name="fee_status" required aria-required="true"></td>
+                </tr>
+                <tr>
+                    <td><label for="fee-date" class="required"><b>(b) Date of Fee Payment for the A.Y. 2024-25:</b></label></td>
+                    <td><input type="date" id="fee-date" name="fee_date" required aria-required="true"></td>
+                </tr>
+                <tr>
+                    <td><label for="payment-mode" class="required"><b>(c) Mode of Payment:</b></label></td>
+                    <td><input type="text" id="payment-mode" name="payment_mode" required aria-required="true"></td>
+                </tr>
+                <tr>
+                    <td><label for="receipt-no" class="required"><b>(d) Receipt No. with date:</b></label></td>
+                    <td><input type="text" id="receipt-no" name="receipt_no" required aria-required="true"></td>
+                </tr>
+            </table>
+
+            <h4>8. Details of Subjects registering for III – Semester:</h4>
+            <table border="true" aria-label="Course Registration Details">
+                <tr>
+                    <th scope="col">S.No.</th>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Name of the Course</th>
+                    <th scope="col">Core / Programme</th>
+                    <th scope="col">Pursuing through Institute / NPTEL / MOOCs</th>
+                    <th scope="col">Remarks</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="sno_1" required aria-required="true"></td>
+                    <td><input type="text" name="code_1" required aria-required="true"></td>
+                    <td><input type="text" name="course_1" required aria-required="true"></td>
+                    <td><input type="text" name="type_1" required aria-required="true"></td>
+                    <td><input type="text" name="mode_1" required aria-required="true"></td>
+                    <td><input type="text" name="remarks_1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="sno_2" required aria-required="true"></td>
+                    <td><input type="text" name="code_2" required aria-required="true"></td>
+                    <td><input type="text" name="course_2" required aria-required="true"></td>
+                    <td><input type="text" name="type_2" required aria-required="true"></td>
+                    <td><input type="text" name="mode_2" required aria-required="true"></td>
+                    <td><input type="text" name="remarks_2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="sno_3" required aria-required="true"></td>
+                    <td><input type="text" name="code_3" required aria-required="true"></td>
+                    <td><input type="text" name="course_3" required aria-required="true"></td>
+                    <td><input type="text" name="type_3" required aria-required="true"></td>
+                    <td><input type="text" name="mode_3" required aria-required="true"></td>
+                    <td><input type="text" name="remarks_3"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="sno_4" required aria-required="true"></td>
+                    <td><input type="text" name="code_4" required aria-required="true"></td>
+                    <td><input type="text" name="course_4" required aria-required="true"></td>
+                    <td><input type="text" name="type_4" required aria-required="true"></td>
+                    <td><input type="text" name="mode_4" required aria-required="true"></td>
+                    <td><input type="text" name="remarks_4"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="sno_5" required aria-required="true"></td>
+                    <td><input type="text" name="code_5" required aria-required="true"></td>
+                    <td><input type="text" name="course_5" required aria-required="true"></td>
+                    <td><input type="text" name="type_5" required aria-required="true"></td>
+                    <td><input type="text" name="mode_5" required aria-required="true"></td>
+                    <td><input type="text" name="remarks_5"></td>
+                </tr>
+            </table>
+
+            <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+                <b>Note: Registration is not permitted with any fee due.</b>
+                <label for="signature" class="required"><b>Signature of the Student: </b><input type="file" id="signature" name="signature" required aria-required="true"></label>
+            </div>
+
+            <hr>
+
+            <h4>Remarks of Head of the Department:</h4>
+            <label for="fee-due"><b>Fee Due, if any: </b></label>
+            <input type="text" id="fee-due" name="fee_due">
+
+            <div class="button" style="display: flex; justify-content: center; margin-top: 20px;">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
