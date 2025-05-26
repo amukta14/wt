@@ -1,20 +1,21 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext } from "react";
 
-const UserContext = createContext();
+// Step 1: Create a Context
+const MyContext = createContext();
 
-function ComponentA() {
-const user = useContext(UserContext);
-return <h2>User: {user}</h2>;
+function Child() {
+// Step 3: Use the Context
+const value = useContext(MyContext);
+return <h2>Value from Context: {value}</h2>;
 }
 
-function UseContextDemo() {
+function App() {
+// Step 2: Provide the Context
 return (
-<UserContext.Provider value="Amukta">
-<div style={{ textAlign: 'center', marginTop: '50px' }}>
-<ComponentA />
-</div>
-</UserContext.Provider>
+<MyContext.Provider value="Hello from Context!">
+<Child />
+</MyContext.Provider>
 );
 }
 
-export default UseContextDemo; 
+export default App;
